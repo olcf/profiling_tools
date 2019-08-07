@@ -13,7 +13,7 @@ cp common/Makefile_cxx miniWeather/c/Makefile
 
 module load pgi/19.4  
 module load parallel-netcdf   
-export PROF_ROOT=$PWD/profiling_tools
+export PROF_ROOT=$PWD/profiling_tools  
 cd miniWeather/c/   
 make  
 
