@@ -89,6 +89,6 @@ export TAU\_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
 	* If there are many folders with pattern MULTI\__*, execute
 		paraprof
 
-	* If there are many files and not a folder, plack them and execute parprof
-		paraprof --pack name.ppk
-		paraprof name.ppk
+	* If there are many files and not a folder, plack them and execute parprof  
+		paraprof --pack name.ppk  
+		paraprof name.ppk  
