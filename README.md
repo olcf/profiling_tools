@@ -82,3 +82,13 @@ export TAU\_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
         make openacc  
         Edit the script weather_mpi.sh to activate the TAU variables that you require  
         bsub weather_mpi_openacc.sh  
+
+* Visualize
+
+	* Connect to the systen with X11 support.
+	* If there are many folders with pattern MULTI\__*, execute
+		paraprof
+
+	* If there are many files and not a folder, plack them and execute parprof
+		paraprof --pack name.ppk
+		paraprof name.ppk
