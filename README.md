@@ -32,12 +32,13 @@ make openacc
 
 * Submit the version you want, uodate the project ID if necessary
 
-** MPI  
-bsub weather_mpi.sh
+	* MPI  
+	bsub weather_mpi.sh
 
-** MPI+OpenMP
-bsub weather_mpi_openmp.sh
+	* MPI+OpenMP  
+	bsub weather_mpi_openmp.sh
 
-** MPI+OpenACC
-bsub weather_mpi_openacc.sh
+	* MPI+OpenACC  
+	bsub weather_mpi_openacc.sh
 
+# TAU
