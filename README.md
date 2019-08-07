@@ -44,7 +44,7 @@ make openacc
 
 # TAU
 
-cd $PROF\_ROOT
+cd $PROF\_ROOT/tau/
 
 cp -r ../../miniweather .
 
@@ -57,7 +57,7 @@ cd miniweather/c
 
 * Declare the correct linking
 
-export TAU\_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
+	export TAU_OPTIONS='-optLinking=-lpnetcdf -optVerbose'
 
 * Compile and run
 
@@ -92,3 +92,12 @@ export TAU\_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
 	* If there are many files and not a folder, plack them and execute parprof  
 		paraprof --pack name.ppk  
 		paraprof name.ppk  
+
+
+* Which loops require the most time?
+
+	export TAU_OPTIONS='-optTauSelectfile=select.tau -optLinking=-lpnetcdf -optVerbose'
+
+	* Compile and Execute
+
+* To create a dynamic phase use the file select2.tau in TAU_OPTIONS
