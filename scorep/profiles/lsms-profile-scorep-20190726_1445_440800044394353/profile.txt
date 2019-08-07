@@ -1,0 +1,572 @@
+
+Estimated aggregate size of event trace:                   71GB
+Estimated requirements for largest trace buffer (max_buf): 36GB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       36GB
+(warning: The memory requirements cannot be satisfied by Score-P to avoid
+ intermediate flushes when tracing. Set SCOREP_TOTAL_MEMORY=4G to get the
+ maximum supported memory or reduce requirements using USR regions filters.)
+
+flt     type     max_buf[B]        visits time[s] time[%] time/visit[us]  region
+         ALL 37,758,241,739 2,906,934,429 8908.15   100.0           3.06  ALL
+         USR 37,757,437,326 2,906,899,413 8777.24    98.5           3.02  USR
+         OMP        757,272        32,688  125.27     1.4        3832.39  OMP
+         MPI         29,220           936    3.40     0.0        3631.14  MPI
+         COM         17,880         1,390    2.24     0.0        1611.02  COM
+      SCOREP             41             2    0.00     0.0         225.28  SCOREP
+
+         USR 22,486,328,384 1,729,717,541 1783.34    20.0           1.03  dfv_m
+         USR  9,921,071,888   763,159,376  772.35     8.7           1.01  fit
+         USR  1,064,960,000    81,920,000 1976.26    22.2          24.12  void bulirsch_stoer_integrator_(double*, double*, double*, double*, int*, double*, std::complex<double>*, double*, double*, double*, double*, int*)
+         USR    846,102,582    65,083,854  126.89     1.4           1.95  void plm_normalized_(int*, double*, double*)
+         USR    844,337,312    64,949,024   60.65     0.7           0.93  zeroout
+         USR    842,383,360    64,798,720  146.13     1.6           2.26  setgij
+         USR    842,383,360    64,798,720  409.22     4.6           6.32  makegij
+         USR    813,560,175    65,083,854   76.93     0.9           1.18  void associatedLegendreFunctionNormalized(R, int, R*) [with R = double]
+         USR     23,394,150     1,795,568    1.50     0.0           0.84  sigma
+         USR     15,441,920     1,187,840    2.53     0.0           2.13  zsphbesj
+         USR     15,441,920     1,187,840    2.53     0.0           2.13  zsphbesjh
+         USR      8,336,640       641,280    0.80     0.0           1.25  alpha2
+         USR      5,857,280       450,560    2.60     0.0           5.77  cinterp
+         USR      4,792,320       368,640  785.30     8.8        2130.26  cnewint
+         USR      4,009,824       308,448    0.27     0.0           0.89  richnk
+         USR      2,129,920       163,840    0.25     0.0           1.50  mdosms
+         USR      2,058,368       157,808    0.15     0.0           0.94  sort
+         USR      2,045,472       156,816    2.28     0.0          14.57  intphi
+         USR      1,464,320       112,640    0.19     0.0           1.70  void handle_cublas_error(cublasStatus_t, char*)
+         USR      1,330,550       102,244    0.08     0.0           0.79  invm3
+         USR      1,125,488        86,572    0.16     0.0           1.89  chkedge
+         USR      1,064,960        81,920    0.09     0.0           1.05  dfv
+         USR        882,752        67,904    0.19     0.0           2.87  interp
+         USR        532,480        40,960    0.05     0.0           1.15  initwave
+         USR        532,480        40,960   84.02     0.9        2051.19  rwave
+         USR        333,216        25,632    0.03     0.0           1.17  fnpi
+         USR        303,264        23,328   20.92     0.2         896.84  newint
+         USR        266,240        20,480    0.26     0.0          12.47  gf_local
+         USR        266,240        20,480    0.06     0.0           2.76  inter
+         USR        266,240        20,480    0.31     0.0          15.26  mgreen
+         USR        266,240        20,480    1.90     0.0          92.55  int_zz_zj
+         USR        266,240        20,480    4.22     0.0         206.01  interstitial
+         USR        222,976        17,152    0.03     0.0           1.57  ord3v
+         OMP        222,720         5,120    0.01     0.0           2.54  !$omp parallel @calculateTauMatrix.cpp:522
+         OMP        222,720         5,120    0.01     0.0           2.46  !$omp parallel @energyContourIntegration.cpp:365
+         USR        183,040        14,080    0.01     0.0           1.02  invals
+         USR        183,040        14,080    0.51     0.0          36.39  outws
+         USR        161,642        12,290    0.01     0.0           0.78  bool dSqrLess_LIZInfoType(const LIZInfoType&, const LIZInfoType&)
+         USR        133,120        10,240    0.03     0.0           3.27  single_scatterer_nonrel
+         USR        133,120        10,240    0.21     0.0          20.64  fitpot
+         USR        133,120        10,240    0.01     0.0           1.09  CUstream_st* get_stream_(const int&)
+         USR        133,120        10,240    0.01     0.0           1.26  clock_time_
+         USR        133,120        10,240    0.82     0.0          80.29  semrel
+         USR        131,066        10,016    0.02     0.0           1.61  celbnd
+         USR        104,416         8,032    0.05     0.0           6.39  inws
+         USR         83,434         6,398    0.00     0.0           0.78  bool globalLess_NodeIndexInfo(const NodeIdxInfo&, const NodeIdxInfo&)
+         USR         81,588         6,276    0.00     0.0           0.78  bool localLess_NodeIndexInfo(const NodeIdxInfo&, const NodeIdxInfo&)
+         USR         78,624         6,048    0.25     0.0          42.09  inwhnk
+         USR         66,560         5,120    0.11     0.0          20.55  green_function
+         USR         66,560         5,120    0.04     0.0           7.03  trgtol
+         USR         66,560         5,120    0.01     0.0           2.20  cmtruni
+         USR         66,560         5,120    0.35     0.0          67.90  tau_inv_postproc_nrel
+         USR         66,560         5,120    0.01     0.0           2.46  zblock_lu
+         USR         66,560         5,120    0.00     0.0           0.95  cublasContext* get_cublas_handle_()
+         USR         66,560         5,120    0.01     0.0           1.04  Complex* get_dev_m_()
+         USR         66,560         5,120    0.01     0.0           0.99  CUevent_st* get_cuda_event_()
+         USR         66,560         5,120    0.10     0.0          19.24  void calculateDensities(LSMSSystemParameters&, int, int, int, int, Complex, Complex, Matrix<std::complex<double> >&, Matrix<std::complex<double> >&, Array3d<std::complex<double> >&, Array3d<std::complex<double> >&, AtomData&)
+         OMP         66,560         5,120   23.18     0.3        4528.18  !$omp implicit barrier @calculateTauMatrix.cpp:548
+         USR         66,560         5,120    0.02     0.0           4.50  void calculateSingleScattererSolution(LSMSSystemParameters&, AtomData&, Matrix<double>&, Complex, Complex, Complex, NonRelativisticSingleScattererSolution&)
+         USR         66,560         5,120 1010.98    11.3      197457.11  void zblock_lu_cuda_c_(std::complex<double>*, int*, int*, int*, int*, int*, int*, int*)
+         OMP         66,560         5,120   27.17     0.3        5306.18  !$omp implicit barrier @energyContourIntegration.cpp:397
+         OMP         66,560         5,120    0.02     0.0           4.30  !$omp for @calculateTauMatrix.cpp:522
+         USR         66,560         5,120    0.05     0.0           9.09  block_inv
+         USR         66,560         5,120    0.07     0.0          14.53  void calculateTauMatrix(LSMSSystemParameters&, LocalTypeInfo&, AtomData&, Complex, Complex, Complex*, Matrix<std::complex<double> >&, int)
+         OMP         66,560         5,120    0.03     0.0           5.47  !$omp for @energyContourIntegration.cpp:365
+         USR         66,560         5,120 1497.51    16.8      292483.20  void buildKKRMatrix(LSMSSystemParameters&, LocalTypeInfo&, AtomData&, Complex, Complex, int, Matrix<std::complex<double> >&)
+         USR         66,560         5,120    0.03     0.0           5.61  trltog
+         USR         61,152         4,704    0.07     0.0          15.91  deepst
+         USR         54,340         4,180    0.00     0.0           0.78  bool nodeLess_NodeIndexInfo(const NodeIdxInfo&, const NodeIdxInfo&)
+         USR         38,844         2,988    0.00     0.0           0.78  defac
+         USR         35,594         1,967    0.00     0.0           1.03  sweeplist
+         USR         28,444         1,443    0.00     0.0           1.63  luaH_get
+         USR         26,208         2,016    0.04     0.0          19.26  semcst
+         USR         23,894         1,278    0.00     0.0           0.83  luaH_getstr
+         USR         23,374         1,472    0.00     0.0           1.64  luaM_realloc_
+         USR         23,296         1,471    0.00     0.0           0.93  l_alloc
+         USR         22,620         1,294    0.00     0.0           0.87  mainposition
+         USR         19,994         1,537    0.07     0.0          45.30  filter_edge
+         USR         19,292           742    0.00     0.0           0.81  save
+         USR         17,238           983    0.00     0.0           2.39  luaH_newkey
+         USR         16,328           957    0.00     0.0           0.86  index2addr
+         USR         14,846           706    0.00     0.0           2.26  luaH_set
+         MPI         13,600           400    1.32     0.0        3289.05  MPI_Allreduce
+         USR         12,948           996    0.00     0.0           3.20  gaunt
+         USR         12,818           765    0.00     0.0           1.62  luaS_newlstr
+         USR         12,662           757    0.00     0.0           2.21  internshrstr
+         USR         12,662           758    0.00     0.0           0.83  luaS_hash
+         USR         12,480           960    0.00     0.0           1.66  cleanup
+         USR         11,440           880    0.00     0.0           0.80  bool nodeIsInList(int, std::vector<LIZInfoType>&, int, CrystalParameters&, int&)
+         USR         11,206           862    0.00     0.0           0.79  bool localAndNodeEq_NodeIndexInfo(const NodeIdxInfo&, const NodeIdxInfo&)
+         USR         11,206           862    0.00     0.0           0.78  bool globalEq_NodeIndexInfo(const NodeIdxInfo&, const NodeIdxInfo&)
+         USR         10,000           800    0.14     0.0         175.94  void integrateOneDim(Real*, Real*, Real*, size_t) [with long unsigned int stepSubdivision = 0ul]
+         USR          9,360           495    0.00     0.0           0.80  arrayindex
+         USR          9,256           621    0.00     0.0           1.67  luaS_new
+         USR          8,866           476    0.00     0.0           1.64  countint
+         USR          8,736           672    0.06     0.0          87.07  corslv
+         USR          8,710           569    0.00     0.0           1.59  freeobj
+         USR          8,554           563    0.00     0.0           1.60  luaC_newobj
+         USR          8,528           574    0.00     0.0           0.81  reallymarkobject
+         USR          8,320           640    0.56     0.0         881.57  void solveSingleScatterers(LSMSSystemParameters&, LocalTypeInfo&, std::vector<Matrix<double> >&, Complex, std::vector<NonRelativisticSingleScattererSolution>&, int)
+         USR          8,320           640    0.60     0.0         933.96  newexchg
+         USR          8,320           640    0.01     0.0          12.55  newpot
+         COM          8,320           640    0.01     0.0          19.98  void calculateAllTauMatrices(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, std::vector<Matrix<double> >&, Complex, int, Matrix<std::complex<double> >&)
+         USR          8,320           640    0.48     0.0         751.20  Complex* get_host_m_(const int&)
+         USR          8,242           317    0.00     0.0           1.02  luaK_dischargevars
+         USR          8,216           316    0.00     0.0           1.59  luaX_next
+         USR          8,138           313    0.00     0.0           2.95  llex
+         USR          8,000           640    0.00     0.0           2.61  Real integrateOneDim(std::vector<double>&, std::vector<double>&, std::vector<double>&, Real) [with long unsigned int stepSubdivision = 0ul]
+         USR          8,000           640    0.00     0.0           0.90  T interpolate(std::vector<T>&, std::vector<T>&, T) [with T = double]
+         USR          7,358           490    0.00     0.0           1.64  createstrobj
+         USR          7,306           486    0.00     0.0           1.63  newshrstr
+         MPI          7,120           160    0.00     0.0           4.13  MPI_Irecv
+         USR          7,020           298    0.00     0.0           1.63  luaV_gettable
+         OMP          6,960           160    0.00     0.0           2.35  !$omp parallel @calculateDensities.cpp:222
+         OMP          6,960           160    0.00     0.0           3.21  !$omp parallel @energyContourIntegration.cpp:257
+         OMP          6,960           160    0.00     0.0           3.21  !$omp parallel @energyContourIntegration.cpp:303
+         OMP          6,960           160    0.00     0.0           2.89  !$omp parallel @energyContourIntegration.cpp:139
+         USR          6,682           443    0.00     0.0           2.45  luaV_settable
+         USR          6,630           382    0.00     0.0           0.85  getfreepos
+         USR          6,240           480    0.02     0.0          43.74  caltnode
+         USR          6,240           480    0.39     0.0         805.12  calsig
+         USR          6,240           480    0.00     0.0           5.60  stepyll
+         USR          5,928           248    0.00     0.0           0.94  luaH_getint
+         USR          5,564           214    0.00     0.0           0.83  init_exp
+         USR          5,408           208    0.00     0.0           7.60  COLLAPSE
+         MPI          5,368           176    0.75     0.0        4280.46  MPI_Send
+         USR          5,174           199    0.00     0.0           0.82  checklimit
+         USR          5,148           294    0.00     0.0           0.80  removeentry
+         USR          4,992           255    0.00     0.0           0.86  lua_settop
+         USR          4,550           350    0.00     0.0           3.25  lua_setfield
+         USR          4,368           336    0.02     0.0          51.20  getcor
+         USR          4,316           166    0.00     0.0           0.82  check
+         USR          4,160           320    0.00     0.0           0.83  void calculateMTZeroPotDiff(LSMSSystemParameters&, LocalTypeInfo&, int)
+         USR          4,160           317    0.00     0.0           0.86  lua_pushcclosure
+         USR          4,160           320    0.00     0.0           1.20  spin_trafo
+         USR          4,160           320    0.01     0.0          19.01  getqm_mt
+         USR          4,160           320    0.00     0.0           0.91  intpl0
+         USR          4,160           320    0.00     0.0           1.14  void getvmt(LSMSSystemParameters, AtomData&, CrystalParameters&, Real*, int&, Real&, Real&, Real&)
+         USR          4,082           157    0.00     0.0           1.14  testnext
+         USR          3,848           148    0.00     0.0           1.64  luaK_exp2val
+         USR          3,744           144    0.00     0.0           1.67  enterlevel
+         USR          3,666           141    0.00     0.0           1.77  luaK_code
+         USR          3,666           141    0.00     0.0           2.05  luaK_exp2RK
+         USR          3,614           139    0.00     0.0           2.48  singlevaraux
+         USR          3,562           137    0.00     0.0           0.83  check_next
+         USR          3,562           137    0.00     0.0           1.70  dischargejpc
+         USR          3,510           135    0.00     0.0           1.07  patchlistaux
+         USR          3,406           131    0.00     0.0           2.12  addk
+         USR          3,328           256    0.04     0.0         154.98  madsum
+         USR          3,198           123    0.00     0.0           0.87  luaS_eqstr
+         USR          2,964           114    0.00     0.0           1.66  luaK_codeABC
+         USR          2,912           224    0.01     0.0          58.78  chkbnd
+         USR          2,912           112    0.00     0.0           0.99  freeexp
+         USR          2,886           120    0.00     0.0           0.84  luaV_equalobj_
+         USR          2,834           109    0.00     0.0           2.49  luaX_newstring
+         USR          2,808           162    0.00     0.0           1.82  setnodevector
+         USR          2,704           104    0.00     0.0           0.85  getunopr
+         USR          2,704           104    0.00     0.0           0.86  getbinopr
+         USR          2,704           104    0.00     0.0           4.33  subexpr
+         USR          2,626           101    0.00     0.0           2.25  simpleexp
+         USR          2,522            97    0.00     0.0           1.73  expr
+         COM          2,500           200    0.00     0.0           2.33  void globalSum(LSMSCommunication&, T&) [with T = double]
+         USR          2,418            93    0.00     0.0           1.49  searchvar
+         USR          2,418            93    0.00     0.0           0.82  hashnum
+         USR          2,392            92    0.00     0.0           1.67  searchupvalue
+         USR          2,288            88    0.00     0.0           2.46  checknext
+         OMP          2,080           160    0.00     0.0           9.39  !$omp implicit barrier @energyContourIntegration.cpp:194
+         OMP          2,080           160    0.00     0.0          10.51  !$omp for @energyContourIntegration.cpp:139
+         USR          2,080           160    0.00     0.0           1.12  u_sigma_u
+         OMP          2,080           160    0.03     0.0         170.40  !$omp implicit barrier @calculateDensities.cpp:231
+         USR          2,080           160    0.00     0.0           2.08  constraint
+         OMP          2,080           160    0.00     0.0           4.61  !$omp for @calculateDensities.cpp:222
+         OMP          2,080           160    0.00     0.0          14.24  !$omp for @energyContourIntegration.cpp:257
+         USR          2,080           160    0.00     0.0           0.85  void checkIfSpinHasFlipped(LSMSSystemParameters&, AtomData&)
+         USR          2,080           160    0.03     0.0         214.01  void calculateChargeDensity(LSMSSystemParameters&, AtomData&, Real, Matrix<double>&, Real&, Real*)
+         USR          2,080           160    0.00     0.0           1.52  void checkCharge(LSMSSystemParameters&, AtomData&)
+         OMP          2,080           160    0.00     0.0          15.31  !$omp implicit barrier @energyContourIntegration.cpp:267
+         USR          2,080           160    0.00     0.0          30.83  void localTotalEnergy(LSMSSystemParameters&, AtomData&, Real&, Real&)
+         MPI          2,080           160    0.00     0.0           3.56  MPI_Wait
+         USR          2,080           160    0.00     0.0           1.02  zeropt
+         OMP          2,080           160    0.00     0.0           8.36  !$omp for @energyContourIntegration.cpp:303
+         OMP          2,080           160   74.80     0.8      467528.78  !$omp implicit barrier @energyContourIntegration.cpp:311
+         USR          2,080            80    0.00     0.0           0.84  luaK_checkstack
+         USR          2,028            78    0.00     0.0           1.69  luaK_reserveregs
+         USR          2,002            77    0.00     0.0           1.82  lua_isnumber
+         USR          2,002            77    0.00     0.0           0.85  inclinenumber
+         USR          2,002            77    0.00     0.0           2.48  str_checkname
+         USR          1,950           134    0.00     0.0           8.60  singlestep
+         USR          1,924            74    0.00     0.0           2.47  codestring
+         USR          1,924            74    0.00     0.0           1.66  luaK_stringK
+         USR          1,898           109    0.00     0.0           5.36  luaH_resize
+         USR          1,898            73    0.00     0.0           0.83  getlocvar
+         USR          1,846            71    0.00     0.0           2.44  lua_gettable
+         USR          1,846           105    0.00     0.0           0.86  luaO_ceillog2
+         USR          1,820            70    0.00     0.0           2.23  discharge2reg
+         USR          1,820            70    0.00     0.0           4.14  luaK_exp2nextreg
+         USR          1,820            70    0.00     0.0           1.67  exp2reg
+         USR          1,742            67    0.00     0.0           1.87  luaK_numberK
+         COM          1,725           138    0.00     0.0           3.38  void globalSum(LSMSCommunication&, T*, int) [with T = double]
+         USR          1,664            64    0.00     0.0           6.37  read_numeral
+         USR          1,664            79    0.00     0.0           1.65  lua_type
+         USR          1,664            64    0.00     0.0           1.22  luaO_str2d
+         USR          1,664            64    0.00     0.0           0.84  buffreplace
+         USR          1,664           115    0.00     0.0           1.83  propagatemark
+         USR          1,612            62    0.00     0.0           1.66  luaK_indexed
+         USR          1,404            54    0.00     0.0           0.83  freereg
+         USR          1,274            49    0.00     0.0           2.61  suffixedexp
+         USR          1,274            49    0.00     0.0           3.27  lua_getglobal
+         USR          1,248            71    0.00     0.0           0.88  numusearray
+         USR          1,248            60    0.00     0.0           1.83  lua_pushstring
+         USR          1,248            71    0.00     0.0           5.42  numusehash
+         USR          1,248            96    0.00     0.0           1.50  void handle_cuda_error(cudaError_t, char*)
+         USR          1,248            71    0.00     0.0           0.87  computesizes
+         USR          1,248            71    0.00     0.0           5.15  rehash
+         USR          1,222            47    0.00     0.0           4.96  singlevar
+         USR          1,222            47    0.00     0.0           1.70  primaryexp
+         USR          1,196            46    0.00     0.0           0.83  block_follow
+         USR          1,144            44    0.00     0.0           2.18  field
+         USR          1,144            44    0.00     0.0           1.19  closelistfield
+         USR          1,066            74    0.00     0.0           1.74  traversetable
+         USR          1,066            74    0.00     0.0          10.08  traversestrongtable
+         USR          1,066            54    0.00     0.0           1.71  lua_tointegerx
+         USR          1,040            40    0.00     0.0           2.64  statement
+         USR          1,040            54    0.00     0.0           0.86  luaD_poscall
+         USR          1,040            77    0.00     0.0           1.68  lua_pushvalue
+         USR          1,040            54    0.00     0.0           4.35  luaD_precall
+         USR            988            38    0.00     0.0           2.53  explist
+         USR            962            51    0.00     0.0           1.79  luaD_call
+         USR            962            37    0.00     0.0           2.11  luaK_exp2anyreg
+         USR            936            36    0.00     0.0           1.75  lua_tonumberx
+         USR            910            53    0.00     0.0           2.67  luaH_new
+         USR            910            35    0.00     0.0           5.14  assignment
+         USR            910            53    0.00     0.0           2.95  luaH_free
+         USR            910            35    0.00     0.0           0.84  lua_pushinteger
+         USR            910            35    0.00     0.0           2.57  exprstat
+         USR            884            34    0.00     0.0           0.82  luaK_setoneret
+         USR            884            34    0.00     0.0           3.35  luaK_storevar
+         USR            832            64    0.00     0.0           1.28  mbeqa
+         USR            832            38    0.00     0.0           1.72  luaH_setint
+         USR            780            30    0.00     0.0           0.83  luaO_int2fb
+         USR            780            54    0.00     0.0           1.48  propagateall
+         USR            754            29    0.00     0.0           1.69  luaM_growaux_
+         USR            754            29    0.00     0.0           4.94  bool luaGetRealPositionFromStack(lua_State*, int, Real*)
+         USR            728            56    0.00     0.0           3.38  lua_getfield
+         USR            702            54    0.00     0.0           2.13  void gauss_legendre_points_(double*, double*, double*, double*, int*)
+         USR            702            27    0.00     0.0           1.64  luaK_codeABx
+         OMP            696            16    0.00     0.0           4.99  !$omp parallel @calculateMadelungMatrices.cpp:26
+         USR            676            26    0.00     0.0           2.43  listfield
+         USR            675            54    0.00     0.0          46.70  void calculateGaussLegendrePoints(R*, R*, int, R, R) [with R = double]
+         USR            650            25    0.00     0.0           1.64  luaL_checktype
+         USR            650            50    0.00     0.0           0.86  lua_version
+         USR            624            24    0.00     0.0           2.44  checkname
+         USR            624            24    0.00     0.0           0.85  luaO_fb2int
+         USR            598            23    0.00     0.0           1.74  luaK_codek
+         USR            572            22    0.00     0.0           1.68  check_match
+         USR            572            22    0.00     0.0           1.71  luaH_next
+         USR            572            22    0.00     0.0           2.91  findindex
+         USR            572            22    0.00     0.0           3.46  luaB_next
+         USR            572            22    0.00     0.0           2.52  lua_next
+         USR            546            21    0.00     0.0           1.65  luaX_lookahead
+         COM            546            42    0.00     0.0          15.89  void calculateCoreStates(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&)
+         USR            546            21    0.00     0.0           3.92  bool luaGetInteger(lua_State*, const char*, int*)
+         COM            525            42    0.00     0.0           2.70  void globalMax(LSMSCommunication&, T&) [with T = double]
+         COM            520            40    0.00     0.0          86.26  void calculatePotential(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, CrystalParameters&, Real*, Array3d<double>&, int)
+         COM            520            40    0.00     0.0           8.50  void calculateChargesPotential(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, CrystalParameters&, int)
+         USR            520            36    0.00     0.0           0.86  clearvalues
+         COM            520            40    0.00     0.0          67.82  void calculateCharges(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, CrystalParameters&, Real*, Array3d<double>&, int)
+         MPI            488            16    0.06     0.0        3548.86  MPI_Recv
+         USR            468            18    0.00     0.0           6.58  recfield
+         USR            468            20    0.00     0.0           1.68  setarrayvector
+         USR            468            18    0.00     0.0           2.73  new_localvar
+         USR            468            18    0.00     0.0           1.24  registerlocalvar
+         USR            416            16    0.06     0.0        3510.01  f_readsingleatomdata_bigcell
+         USR            416            32    0.00     0.0           2.39  lua_createtable
+         USR            416            32    0.02     0.0         556.87  lattice
+         USR            416            16    0.00     0.0           4.65  bool luaGetIntegerFieldFromStack(lua_State*, const char*, int*)
+         COM            416            32    0.00     0.0          12.16  void communicateSingleAtomData(LSMSCommunication&, int, int, int&, AtomData&, int)
+         USR            416            16    0.00     0.0           1.67  luaK_exp2anyregup
+         USR            416            16    0.00     0.0           8.63  void writeSingleEvec(FILE*, int, int, Real, Real, Real, AtomData&)
+         USR            416            16    0.00     0.0           2.85  int readSingleAtomData_bigcell(const char*, AtomData&)
+         USR            416            32    0.00     0.0           7.88  int buildLIZ(CrystalParameters&, int, std::vector<LIZInfoType>&)
+         MPI            408            12    0.11     0.0        9099.67  MPI_Bcast
+         USR            390            15    0.00     0.0          16.72  constructor
+         USR            390            15    0.00     0.0           1.97  lastlistfield
+         USR            390            27    0.00     0.0           1.65  propagatelist
+         USR            364            14    0.00     0.0           1.98  removevars
+         USR            364            14    0.00     0.0           3.14  leaveblock
+         USR            364            14    0.00     0.0           1.65  lua_isstring
+         USR            364            14    0.00     0.0           0.90  isnumeral
+         USR            364            14    0.00     0.0           0.98  enterblock
+         USR            364            28    0.00     0.0           4.01  luaL_getsubtable
+         USR            364            28    0.00     0.0           1.42  lua_pushnumber
+         USR            338            13    0.00     0.0           0.84  luaV_tonumber
+         USR            338            13    0.00     0.0           0.88  movegotosout
+         USR            312            22    0.00     0.0           0.84  traverseCclosure
+         USR            312            24    0.00     0.0           1.78  lua_tounsignedx
+         USR            312            12    0.00     0.0           1.66  skip_sep
+         USR            312            24    0.00     0.0           1.87  luaL_checkstack
+         USR            312            21    0.00     0.0           1.72  lua_getmetatable
+         USR            312            24    0.00     0.0           6.43  luaL_checkversion_
+         USR            312            12    0.00     0.0           0.91  luaK_fixline
+         USR            312            24    0.00     0.0           0.90  lua_checkstack
+         USR            312            24    0.00     0.0          23.00  luaL_setfuncs
+         USR            312            12    0.00     0.0           2.64  new_localvarliteral_
+         USR            312            20    0.00     0.0           1.91  luaC_step
+         USR            286            22    0.00     0.0           3.27  lua_setglobal
+         USR            286            19    0.00     0.0           1.87  luaC_forcestep
+         USR            286            19    0.00     0.0           7.83  incstep
+         USR            286            19    0.00     0.0           0.93  luaE_setdebt
+         USR            260            10    0.00     0.0           4.16  bool luaGetStrN(lua_State*, const char*, char*, int)
+         USR            260            20    0.00     0.0           9.08  luaL_requiref
+         COM            260            20    0.00     0.0          15.73  void calculateTotalEnergy(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, CrystalParameters&)
+         USR            260            10    0.00     0.0           0.89  fixjump
+         USR            260            10    0.00     0.0           4.13  yindex
+         USR            260            10    0.00     0.0           0.89  getjumpcontrol
+         COM            260            20    0.00     0.0          18.58  void calculateAllLocalChargeDensities(LSMSSystemParameters&, LocalTypeInfo&)
+         COM            260            20    0.00     0.0           3.24  void globalAnd(LSMSCommunication&, bool&)
+         USR            260            19    0.00     0.0           1.00  markmt
+         USR            260            19    0.00     0.0           0.93  markbeingfnz
+         USR            260            20    0.00     0.0           1.12  void mixEvec(LSMSSystemParameters&, LocalTypeInfo&, Real)
+         USR            260            20    0.00     0.0           1.87  lua_callk
+         USR            260            10    0.00     0.0           1.13  luaK_concat
+         USR            260            20    0.00     0.0           1.46  void calculateEvec(LSMSSystemParameters&, LocalTypeInfo&)
+         USR            260            10    0.00     0.0           0.89  getjump
+         COM            260            20    0.00     0.0          34.62  void calculateChemPot(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&, Real&)
+         COM            260            20    2.08     0.0      103970.08  void energyContourIntegration(LSMSCommunication&, LSMSSystemParameters&, LocalTypeInfo&)
+         COM            260            20    0.00     0.0           9.01  void finalizeTmatCommunication(LSMSCommunication&)
+         COM            260            20    0.00     0.0          14.45  void sendTmats(LSMSCommunication&, LocalTypeInfo&)
+         COM            260            20    0.00     0.0          11.50  void expectTmatCommunication(LSMSCommunication&, LocalTypeInfo&)
+         USR            260            18    0.00     0.0           0.89  convergeephemerons
+         USR            260            20    0.00     0.0           6.93  congauss
+         USR            260            20    0.00     0.0           5.28  void buildEnergyContour(int, Real, Real, Real, Real, std::vector<std::complex<double> >&, std::vector<std::complex<double> >&, int, int&, int, char*)
+         USR            260            18    0.00     0.0           0.90  clearkeys
+         USR            260            18    0.00     0.0           1.91  sweeptolive
+         USR            234            18    0.00     0.0           5.53  luaL_testudata
+         USR            234            18    0.00     0.0           1.71  lua_touserdata
+         USR            234            18    0.00     0.0           3.52  lua_rawequal
+         USR            234            18    0.00     0.0           1.92  luaL_checkudata
+         USR            234             9    0.00     0.0           1.71  lua_tolstring
+         USR            234            17    0.00     0.0           1.31  traversestack
+         USR            234             9    0.00     0.0           1.89  patchtestreg
+         USR            234            17    0.00     0.0           0.94  luaC_barrierback_
+         USR            234             9    0.00     0.0           1.63  luaK_setlist
+         USR            234             9    0.00     0.0           4.28  bool luaGetPositionInTable(lua_State*, const char*, int)
+         USR            234            12    0.00     0.0           0.87  lua_pushnil
+         USR            208             8    0.00     0.0           3.06  adjustlocalvars
+         USR            208            16    0.00     0.0           1.40  ilaenv
+         USR            208            16    0.00     0.0          32.49  madewd
+         USR            208            16    0.00     0.0           2.99  getkncut
+         USR            208            16    0.00     0.0           4.48  getrscut
+         USR            208            16    0.00     0.0           9.38  getstruc
+         USR            208            16    0.00     0.0          11.06  cal_madelung_matrix
+         USR            208            16    0.05     0.0        3204.85  void interpolatePotential(LSMSSystemParameters&, AtomData&)
+         USR            208            16    0.00     0.0           1.72  inter_dip
+         USR            208            16    0.00     0.0          30.42  volvor
+         USR            208            16    0.00     0.0          45.36  rcritpts
+         USR            208            16    0.00     0.0           1.97  sortidx
+         USR            208            16    0.01     0.0         554.92  polyhedron
+         USR            208            16    0.01     0.0         635.00  setup_boundary
+         USR            208            16    0.00     0.0          92.49  setup_vorpol
+         OMP            208            16    0.00     0.0          52.32  !$omp for @calculateMadelungMatrices.cpp:26
+         OMP            208            16    0.00     0.0          63.65  !$omp implicit barrier @calculateMadelungMatrices.cpp:37
+         USR            182            12    0.00     0.0           3.92  luaD_rawrunprotected
+         USR            182             7    0.00     0.0           2.91  luaK_patchtohere
+         USR            182             7    0.00     0.0           0.92  luaK_getlabel
+         USR            182             7    0.00     0.0           3.27  bool luaGetFieldInTable(lua_State*, const char*, const char*)
+         USR            156            12    0.00     0.0           1.74  luaT_gettm
+         USR            156            12    0.00     0.0           1.90  lua_pushlstring
+         USR            156             6    0.00     0.0           4.07  fieldsel
+         USR            156            12    0.00     0.0           1.66  luaF_newCclosure
+         USR            156             6    0.00     0.0          13.33  statlist
+         USR            156            11    0.00     0.0           1.06  separatetobefnz
+         USR            156             6    0.00     0.0           2.50  bool luaGetFieldFromStack(lua_State*, const char*)
+         USR            156            10    0.00     0.0           1.75  luaD_pcall
+         USR            130             9    0.00     0.0           0.92  luaC_runtilstate
+         USR            130             9    0.00     0.0           0.96  remarkupvals
+         USR            130            10    0.00     0.0           1.32  luaE_freeCI
+         USR            130             9    0.00     0.0           4.07  luaS_resize
+         USR            130             9    0.00     0.0           3.11  entersweep
+         USR            130             9    0.00     0.0           4.64  retraversegrays
+         USR            130            10    0.00     0.0           5.42  restartcollection
+         USR            130            10    0.00     0.0           2.77  lua_setmetatable
+         USR            130             9    0.00     0.0          16.17  atomic
+         USR            104             4    0.00     0.0           2.53  exp1
+         USR            104             4    0.00     0.0           0.91  findgotos
+         USR            104             8    0.00     0.0           1.71  luaT_gettmbyobj
+         USR            104             8    0.00     0.0           1.65  dothecall
+         USR            104             8    0.00     0.0           2.17  luaC_checkfinalizer
+         USR            104             4    0.00     0.0           6.79  forstat
+         USR            104             8    0.00     0.0           0.88  udata2finalize
+         USR            104             4    0.00     0.0           1.09  newlabelentry
+         USR            104             8    0.00     0.0           2.50  lua_rawseti
+         USR            104             8    0.00     0.0           4.92  GCTM
+         USR            104             8    0.00     0.0           1.74  checkSizes
+         USR            104             4    0.00     0.0           4.30  breaklabel
+         USR            104             4    0.00     0.0           1.79  luaK_patchlist
+         USR            104             4    0.00     0.0           9.20  read_string
+         USR            104             4    0.00     0.0           5.03  bool luaGetStrNFromStack(lua_State*, const char*, char*, int)
+         USR            104             8    0.00     0.0           0.92  stackinuse
+         USR            104             8    0.00     0.0           2.90  luaD_shrinkstack
+         USR            104             4    0.00     0.0           2.36  constfolding
+         USR            104             4    0.00     0.0           7.04  codearith
+         USR            104             8    0.00     0.0           4.36  sweepthread
+         USR            104             4    0.00     0.0           2.20  luaK_posfix
+         USR            104             4    0.00     0.0           2.00  luaK_infix
+         USR            104             4    0.00     0.0           3.94  block
+         USR            104             4    0.00     0.0           4.09  bool luaGetRealFieldInTable(lua_State*, const char*, const char*, Real*)
+         USR            104             8    0.00     0.0           2.30  setpause
+         USR            104             4    0.00     0.0          15.74  forbody
+         USR            104             4    0.00     0.0           0.96  luaK_setreturns
+         USR             78             6    0.00     0.0           2.46  luaL_setmetatable
+         USR             78             6    0.00     0.0           1.66  luaS_newudata
+         USR             78             6    0.00     0.0           2.28  lua_newuserdata
+         USR             78             6    0.00     0.0           3.79  newprefile
+         USR             78             6    0.00     0.0           4.18  createstdfile
+         USR             78             3    0.00     0.0           4.62  bool luaGetIntegerFieldInTable(lua_State*, const char*, const char*, int*)
+         USR             78             6    0.00     0.0           3.27  lua_rawgeti
+         USR             78             3    0.00     0.0           4.92  bool luaGetRealFieldFromStack(lua_State*, const char*, Real*)
+         USR             78             5    0.00     0.0           1.74  luaE_extendCI
+         USR             78             3    0.00     0.0           1.82  pushstr
+         USR             78             3    0.00     0.0           2.45  bool luaGetIntegerPositionInTable(lua_State*, const char*, int, int*)
+         USR             78             3    0.00     0.0           2.38  luaL_getmetafield
+         USR             78             3    0.00     0.0           8.95  getF
+         USR             78             3    0.00     0.0           7.03  pairsmeta
+         USR             78             3    0.00     0.0           2.35  luaB_pairs
+         USR             78             6    0.00     0.0           0.93  lua_absindex
+         USR             78             6    0.00     0.0           4.10  f_gc
+         USR             78             6    0.00     0.0           3.38  aux_close
+         USR             78             3    0.00     0.0           2.47  luaK_prefix
+         USR             78             6    0.00     0.0           3.77  io_noclose
+         USR             78             3    0.00     0.0           2.64  luaZ_fill
+         USR             52             4    0.00     0.0           7.14  setpath
+         USR             52             3    0.00     0.0           1.07  correctstack
+         USR             52             3    0.00     0.0           3.87  luaD_reallocstack
+         USR             52             2    0.00     0.0          14.53  forlist
+         USR             52             2    0.00     0.0           1.04  luaC_barrier_
+         USR             52             2    0.00     0.0           9.56  funcargs
+         USR             52             2    0.00     0.0           2.68  adjust_assign
+         USR             52             2    0.00     0.0           3.58  luaK_jump
+         USR             52             2    0.00     0.0          12.53  fornum
+      SCOREP             41             2    0.00     0.0         225.28  lsms
+         USR             26             1    0.00     0.0           6.73  newupvalue
+         USR             26             1    0.00     0.0           4.81  open_func
+         USR             26             1    0.00     0.0          18.83  mainfunc
+         USR             26             1    0.00     0.0           2.71  luaX_setinput
+         USR             26             1    0.00     0.0           1.84  luaF_newproto
+         USR             26             1    0.00     0.0           1.85  luaF_newLclosure
+         USR             26             1    0.00     0.0          14.23  luaY_parser
+         USR             26             1    0.00     0.0           1.05  checkmode
+         USR             26             1    0.00     0.0          13.90  f_parser
+         USR             26             1    0.00     0.0          15.44  luaD_protectedparser
+         USR             26             1    0.00     0.0           1.06  luaZ_init
+         USR             26             1    0.00     0.0           8.76  lua_load
+         USR             26             1    0.00     0.0          32.78  skipBOM
+         USR             26             1    0.00     0.0           5.58  skipcomment
+         USR             26             1    0.00     0.0           1.97  luaZ_openspace
+         USR             26             1    0.00     0.0           5.89  luaV_concat
+         USR             26             1    0.00     0.0          17.86  luaO_pushvfstring
+         USR             26             1    0.00     0.0           5.23  lua_pushfstring
+         USR             26             1    0.00     0.0           1.42  lua_gettop
+         USR             26             1    0.00     0.0        2150.57  luaL_loadfilex
+         USR             26             1    0.08     0.0       80103.08  void acceleratorPrint()
+         COM             26             2    0.00     0.0          20.84  void initializeCommunication(LSMSCommunication&)
+         USR             26             2    0.00     0.0           1.07  void initLSMSLuaInterface(lua_State*)
+         USR             26             2    0.00     0.0           2.77  luaopen_debug
+         USR             26             2    0.00     0.0           6.17  luaopen_math
+         USR             26             2    0.00     0.0           2.75  luaopen_bit32
+         USR             26             2    0.00     0.0           7.49  createmetatable
+         USR             26             2    0.00     0.0           5.46  luaopen_string
+         USR             26             2    0.00     0.0           2.74  luaopen_os
+         USR             26             2    0.00     0.0           5.89  luaL_newmetatable
+         USR             26             2    0.00     0.0           7.04  createmeta
+         USR             26             2    0.00     0.0           9.94  luaopen_io
+         USR             26             2    0.00     0.0           4.55  luaopen_table
+         USR             26             2    0.00     0.0           2.90  luaopen_coroutine
+         USR             26             2    0.00     0.0          13.46  createsearcherstable
+         USR             26             2    0.00     0.0          25.63  luaopen_package
+         USR             26             2    0.00     0.0          13.43  luaopen_base
+         USR             26             2    0.00     0.0          20.79  luaL_openlibs
+         USR             26             2    0.00     0.0           1.04  lua_atpanic
+         USR             26             2    0.00     0.0          18.72  luaX_init
+         USR             26             2    0.00     0.0          16.72  luaT_init
+         USR             26             2    0.00     0.0          10.89  init_registry
+         USR             26             2    0.00     0.0           4.04  stack_init
+         USR             26             2    0.00     0.0          18.92  f_luaopen
+         USR             26             2    0.00     0.0           9.71  makeseed
+         USR             26             2    0.00     0.0           1.16  preinit_state
+         USR             26             2    0.00     0.0          41.47  lua_newstate
+         USR             26             2    0.00     0.0          23.75  luaL_newstate
+         USR             26             2    0.00     0.0           1.15  void __nv_save_fatbinhandle_for_managed_rt(void**)
+         USR             26             2    0.00     0.0           1.16  void __nv_save_fatbinhandle_for_managed_rt(void**)
+         USR             26             2    0.00     0.0          16.66  void __nv_cudaEntityRegisterCallback(void**)
+         USR             26             2    0.00     0.0           6.95  void __sti____cudaRegisterAll()
+         USR             26             2    0.00     0.0           5.82  void __nv_save_fatbinhandle_for_managed_rt(void**)
+         USR             26             2    0.00     0.0           2.70  freestack
+         USR             26             1    0.00     0.0           6.79  luaF_freeproto
+         USR             26             1    0.00     0.0           1.85  luaF_freeupval
+         USR             26             2    0.00     0.0           1.11  luaH_getn
+         USR             26             2    0.00     0.0           5.01  luaV_objlen
+         USR             26             2    0.00     0.0           5.13  lua_len
+         USR             26             2    0.00     0.0           5.63  luaL_len
+         USR             26             2    0.00     0.0           4.08  gctm
+         COM             26             2    0.00     0.0         649.60  int writeInfoEvec(LSMSCommunication&, LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&, const char*)
+         COM             26             2    0.13     0.0       66631.02  int main(int, char**)
+         USR             26             2    0.00     0.0           6.76  callallpendingfinalizers
+         USR             26             2    0.00     0.0         314.73  luaC_freeallobjects
+         USR             26             2    0.00     0.0           1.09  luaF_close
+         USR             26             2    0.00     0.0          14.71  close_state
+         USR             26             2    0.00     0.0           5.42  lua_close
+         COM             26             2    0.00     0.0          11.81  void finalizeCommunication()
+         USR             26             2    0.00     0.0           1.10  accelerator_finalize
+         USR             26             2    0.59     0.0      296306.12  void acceleratorFinalize()
+         MPI             26             2    0.00     0.0           7.41  MPI_Comm_rank
+         MPI             26             2    0.00     0.0           4.77  MPI_Comm_size
+         USR             26             1    0.00     0.0          67.12  int readNextIterationNumber(const char*)
+         MPI             26             2    0.01     0.0        3194.81  MPI_Finalize
+         MPI             26             2    0.00     0.0           1.46  MPI_Finalized
+         COM             26             2    0.00     0.0         467.32  void calculateMadelungMatrices(LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&)
+         USR             26             2    0.00     0.0          26.70  void setupMixing(MixingParameters&, Mixing*&)
+         COM             26             2    0.00     0.0          16.26  void calculateVolumes(LSMSCommunication&, LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&)
+         USR             26             2    0.01     0.0        4483.28  void setupVorpol(LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&, SphericalHarmonicsCoeficients&)
+         COM             26             2    0.00     0.0         310.53  int loadPotentials(LSMSCommunication&, LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&)
+         USR             26             1    0.00     0.0          84.20  void printLIZInfo(FILE*, AtomData&)
+         USR             26             1    0.00     0.0           1.75  void printAlloyParameters(FILE*, AlloyMixingDesc&)
+         USR             26             1    0.00     0.0           1.94  traverseLclosure
+         USR             26             1    0.00     0.0           6.61  traverseproto
+         USR             26             1    0.00     0.0          22.49  bool getXCName(LSMSSystemParameters&, std::__cxx11::string&)
+         USR             26             1    0.00     0.0          23.27  void printLSMSSystemParameters(FILE*, LSMSSystemParameters&)
+         USR             26             1    0.00     0.0          22.01  void printLSMSGlobals(FILE*, LSMSSystemParameters&)
+         USR             26             2    0.00     0.0           1.07  accelerator_initialize
+         USR             26             2    0.00     0.0           5.08  void acceleratorInitialize(int, int)
+         USR             26             2    0.03     0.0       14281.83  void buildLIZandCommLists(LSMSCommunication&, LSMSSystemParameters&, CrystalParameters&, LocalTypeInfo&)
+         USR             26             2    0.00     0.0           3.68  ifacts
+         MPI             26             2    1.16     0.0      578067.78  MPI_Init
+         MPI             26             2    0.00     0.0           2.42  MPI_Initialized
+         USR             26             2    0.00     0.0         427.77  cgaunt
+         USR             26             2    0.00     0.0           1.55  int distributeTypes(CrystalParameters&, LSMSCommunication&)
+         COM             26             2    0.00     0.0          80.58  void communicateParameters(LSMSCommunication&, LSMSSystemParameters&, CrystalParameters&, MixingParameters&, AlloyMixingDesc&)
+         USR             26             1    0.00     0.0           3.60  bool luaGetReal(lua_State*, const char*, Real*)
+         USR             26             1    0.00     0.0          26.71  void repeatBasisCell(LSMSSystemParameters&, CrystalParameters&, int, int, int, int)
+         USR             26             1    0.00     0.0         169.81  int readInput(lua_State*, LSMSSystemParameters&, CrystalParameters&, MixingParameters&, PotentialShifter&, AlloyMixingDesc&)
+         USR             26             1    0.00     0.0           1.86  luaD_growstack
+         USR             26             1    0.00     0.0         264.68  luaV_execute
+         USR             26             1    0.00     0.0           1.03  adjust_varargs
+         USR             26             1    0.00     0.0           1.97  f_call
+         USR             26             1    0.00     0.0           1.95  lua_pcallk
+         USR             26             1    0.00     0.0           2.27  lua_remove
+         USR             26             1    0.00     0.0           1.89  luaF_newupval
+         USR             26             1    0.00     0.0           1.12  anchor_token
+         USR             26             1    0.00     0.0           1.83  luaK_ret
+         USR             26             1    0.00     0.0          12.26  close_func
+         USR             26             1    0.00     0.0          11.51  read_long_string
+         USR             26             1    0.00     0.0           1.90  invertjump
+         USR             26             1    0.00     0.0           6.34  luaK_goiftrue
+         USR             26             1    0.00     0.0           9.56  test_then_block
+         USR             26             1    0.00     0.0           6.34  ifstat

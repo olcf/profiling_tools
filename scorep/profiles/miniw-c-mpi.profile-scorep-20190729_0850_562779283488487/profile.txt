@@ -1,0 +1,36 @@
+
+Estimated aggregate size of event trace:                   892MB
+Estimated requirements for largest trace buffer (max_buf): 11MB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       13MB
+(hint: When tracing set SCOREP_TOTAL_MEMORY=13MB to avoid intermediate flushes
+ or reduce requirements using USR regions filters.)
+
+flt     type max_buf[B]     visits time[s] time[%] time/visit[us]  region
+         ALL 11,192,447 14,768,958 3053.31   100.0         206.74  ALL
+         MPI 10,976,358 14,012,706 2400.16    78.6         171.28  MPI
+         COM    216,048    756,168  653.14    21.4         863.76  COM
+      SCOREP         41         84    0.01     0.0          87.36  SCOREP
+
+         MPI  4,698,000  4,536,000    8.08     0.3           1.78  MPI_Irecv
+         MPI  4,698,000  4,536,000    9.50     0.3           2.09  MPI_Isend
+         MPI  1,296,000  4,536,000   88.63     2.9          19.54  MPI_Waitall
+         COM    216,000    756,000  649.84    21.3         859.58  perform_timestep(double*, double*, double*, double*, double)
+         MPI     58,800     50,400   63.76     2.1        1265.17  MPI_File_write_at_all
+         MPI     49,500     63,000 1133.58    37.1       17993.25  MPI_Allreduce
+         MPI     44,198        451    0.81     0.0        1795.89  MPI_File_write_at
+         MPI     36,096    126,336    0.09     0.0           0.68  MPI_Comm_rank
+         MPI     20,100     25,200  530.14    17.4       21037.15  MPI_File_open
+         MPI     19,800     25,200    4.47     0.1         177.39  MPI_Bcast
+         MPI     18,000     50,550   11.49     0.4         227.35  MPI_File_set_view
+         MPI     14,602        149    0.01     0.0          67.34  MPI_File_read_at
+         MPI     12,300     25,200   39.54     1.3        1569.11  MPI_File_close
+         MPI      3,600     12,600    0.11     0.0           8.89  MPI_File_get_info
+         MPI      3,600     12,600   11.88     0.4         942.56  MPI_Comm_free
+         MPI      3,600     12,600  461.78    15.1       36648.92  MPI_Comm_dup
+         MPI         66         84    0.01     0.0          72.64  MPI_Barrier
+         MPI         48        168    0.00     0.0           4.97  MPI_Comm_size
+      SCOREP         41         84    0.01     0.0          87.36  miniWeather_mpi
+         MPI         24         84   36.26     1.2      431707.28  MPI_Init
+         COM         24         84    3.07     0.1       36580.30  main
+         MPI         24         84    0.02     0.0         285.15  MPI_Finalize
+         COM         24         84    0.23     0.0        2765.32  init(int*, char***)

@@ -1,0 +1,81 @@
+
+Estimated aggregate size of event trace:                   2710MB
+Estimated requirements for largest trace buffer (max_buf): 732MB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       772MB
+(hint: When tracing set SCOREP_TOTAL_MEMORY=772MB to avoid intermediate flushes
+ or reduce requirements using USR regions filters.)
+
+flt     type  max_buf[B]     visits time[s] time[%] time/visit[us]  region
+         ALL 766,552,809 61,293,318  851.53   100.0          13.89  ALL
+         OMP 751,025,340 59,976,720  731.87    85.9          12.20  OMP
+         MPI  11,311,476    667,986  110.81    13.0         165.88  MPI
+         COM   4,215,952    648,608    8.86     1.0          13.66  COM
+      SCOREP          41          4    0.00     0.0          77.53  SCOREP
+
+         OMP  93,960,000  4,320,000    2.89     0.3           0.67  !$omp parallel @miniWeather_mpi_openmp.cpp:213
+         OMP  46,980,000  2,160,000    1.48     0.2           0.68  !$omp parallel @miniWeather_mpi_openmp.cpp:291
+         OMP  46,980,000  2,160,000    1.47     0.2           0.68  !$omp parallel @miniWeather_mpi_openmp.cpp:322
+         OMP  46,980,000  2,160,000    1.49     0.2           0.69  !$omp parallel @miniWeather_mpi_openmp.cpp:236
+         OMP  46,980,000  2,160,000    1.43     0.2           0.66  !$omp parallel @miniWeather_mpi_openmp.cpp:267
+         OMP  46,980,000  2,160,000    1.46     0.2           0.67  !$omp parallel @miniWeather_mpi_openmp.cpp:369
+         OMP  46,980,000  2,160,000    1.44     0.2           0.67  !$omp parallel @miniWeather_mpi_openmp.cpp:408
+         OMP  46,980,000  2,160,000    1.55     0.2           0.72  !$omp parallel @miniWeather_mpi_openmp.cpp:351
+         OMP  46,980,000    540,000    0.36     0.0           0.66  !$omp parallel @miniWeather_mpi_openmp.cpp:384
+         OMP  28,080,000  4,320,000   28.83     3.4           6.67  !$omp for @miniWeather_mpi_openmp.cpp:213
+         OMP  28,080,000  4,320,000   12.77     1.5           2.96  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:222
+         OMP  14,040,000  2,160,000    2.26     0.3           1.05  !$omp for @miniWeather_mpi_openmp.cpp:369
+         OMP  14,040,000  2,160,000    1.93     0.2           0.90  !$omp for @miniWeather_mpi_openmp.cpp:408
+         OMP  14,040,000  2,160,000    2.22     0.3           1.03  !$omp for @miniWeather_mpi_openmp.cpp:351
+         OMP  14,040,000  2,160,000   31.66     3.7          14.66  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:336
+         OMP  14,040,000  2,160,000   32.52     3.8          15.06  !$omp for @miniWeather_mpi_openmp.cpp:322
+         OMP  14,040,000  2,160,000   30.44     3.6          14.09  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:319
+         OMP  14,040,000  2,160,000  260.56    30.6         120.63  !$omp for @miniWeather_mpi_openmp.cpp:291
+         OMP  14,040,000  2,160,000    6.52     0.8           3.02  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:377
+         OMP  14,040,000  2,160,000    6.82     0.8           3.16  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:277
+         OMP  14,040,000  2,160,000   23.07     2.7          10.68  !$omp for @miniWeather_mpi_openmp.cpp:267
+         OMP  14,040,000  2,160,000  257.48    30.2         119.20  !$omp for @miniWeather_mpi_openmp.cpp:236
+         OMP  14,040,000  2,160,000    7.10     0.8           3.29  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:264
+         OMP  14,040,000    540,000    0.42     0.0           0.78  !$omp for @miniWeather_mpi_openmp.cpp:384
+         OMP  14,040,000  2,160,000    5.74     0.7           2.66  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:435
+         OMP  14,040,000    540,000    1.57     0.2           2.92  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:396
+         OMP  14,040,000  2,160,000    6.07     0.7           2.81  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:359
+         MPI   4,806,000    216,000    0.42     0.0           1.96  MPI_Irecv
+         MPI   4,806,000    216,000    0.68     0.1           3.15  MPI_Isend
+         COM   1,404,000    216,000    1.79     0.2           8.30  semi_discrete_step(double*, double*, double*, double, int, double*, double*)
+         MPI   1,404,000    216,000    3.57     0.4          16.54  MPI_Waitall
+         COM     702,000    108,000    1.68     0.2          15.54  compute_tendencies_x(double*, double*, double*)
+         COM     702,000    108,000    1.59     0.2          14.75  compute_tendencies_z(double*, double*, double*)
+         COM     702,000    108,000    0.81     0.1           7.46  set_halo_values_z(double*)
+         COM     702,000    108,000    2.24     0.3          20.71  set_halo_values_x(double*)
+         OMP     261,000     12,000    0.01     0.0           0.76  !$omp parallel @miniWeather_mpi_openmp.cpp:761
+         OMP      78,000     12,000    0.04     0.0           3.66  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:773
+         OMP      78,000     12,000    0.12     0.0          10.27  !$omp for @miniWeather_mpi_openmp.cpp:761
+         MPI      60,000      2,400   11.56     1.4        4817.26  MPI_File_write_at_all
+         MPI      51,000      3,000   34.07     4.0       11355.49  MPI_Allreduce
+         MPI      45,100        451    0.60     0.1        1334.32  MPI_File_write_at
+         MPI      39,104      6,016    0.00     0.0           0.69  MPI_Comm_rank
+         MPI      20,700      1,200   30.40     3.6       25329.65  MPI_File_open
+         MPI      20,400      1,200    0.24     0.0         197.03  MPI_Bcast
+         MPI      19,500      2,550    0.21     0.0          82.05  MPI_File_set_view
+         MPI      14,900        149    0.01     0.0          41.86  MPI_File_read_at
+         MPI      12,900      1,200    0.75     0.1         623.55  MPI_File_close
+         MPI       3,900        600   26.29     3.1       43823.01  MPI_Comm_dup
+         MPI       3,900        600    0.01     0.0           8.50  MPI_File_get_info
+         MPI       3,900        600    0.13     0.0         213.89  MPI_Comm_free
+         COM       3,900        600    0.63     0.1        1051.86  output(double*, double)
+         OMP       1,740         80    0.00     0.0           3.43  !$omp parallel @miniWeather_mpi_openmp.cpp:505
+         OMP       1,740         80    0.00     0.0           1.20  !$omp parallel @miniWeather_mpi_openmp.cpp:546
+         OMP       1,740         80    0.00     0.0           1.06  !$omp parallel @miniWeather_mpi_openmp.cpp:564
+         OMP         520         80    0.00     0.0           5.41  !$omp for @miniWeather_mpi_openmp.cpp:546
+         OMP         520         80    0.01     0.0         128.49  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:544
+         OMP         520         80    0.00     0.0           2.73  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:562
+         OMP         520         80    0.12     0.0        1503.93  !$omp for @miniWeather_mpi_openmp.cpp:505
+         OMP         520         80    0.00     0.0           3.20  !$omp for @miniWeather_mpi_openmp.cpp:564
+         OMP         520         80    0.00     0.0           2.68  !$omp implicit barrier @miniWeather_mpi_openmp.cpp:576
+         MPI          68          4    0.00     0.0          41.98  MPI_Barrier
+         MPI          52          8    0.00     0.0           5.55  MPI_Comm_size
+      SCOREP          41          4    0.00     0.0          77.53  miniWeather_mpi_openmp
+         MPI          26          4    1.87     0.2      468106.54  MPI_Init
+         MPI          26          4    0.00     0.0          77.58  MPI_Finalize
+         COM          26          4    0.11     0.0       26475.80  main
+         COM          26          4    0.01     0.0        3135.38  init(int*, char***)

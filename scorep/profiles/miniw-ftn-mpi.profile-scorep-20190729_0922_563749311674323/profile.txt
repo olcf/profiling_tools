@@ -1,0 +1,47 @@
+
+Estimated aggregate size of event trace:                   1273MB
+Estimated requirements for largest trace buffer (max_buf): 16MB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       18MB
+(hint: When tracing set SCOREP_TOTAL_MEMORY=18MB to avoid intermediate flushes
+ or reduce requirements using USR regions filters.)
+
+flt     type max_buf[B]     visits time[s] time[%] time/visit[us]  region
+         ALL 15,966,743 31,393,104 3443.25   100.0         109.68  ALL
+         MPI 10,976,358 14,012,706 2812.45    81.7         200.71  MPI
+         USR  2,826,672  9,807,462  591.62    17.2          60.32  USR
+         COM  2,163,672  7,572,852   39.17     1.1           5.17  COM
+      SCOREP         41         84    0.02     0.0         209.31  SCOREP
+
+         MPI  4,698,000  4,536,000    7.82     0.2           1.72  MPI_Irecv
+         MPI  4,698,000  4,536,000    9.52     0.3           2.10  MPI_Isend
+         MPI  1,296,000  4,536,000   99.24     2.9          21.88  MPI_Waitall
+         COM  1,296,000  4,536,000   18.93     0.5           4.17  miniweather_semi_discrete_step
+         USR    648,000  2,268,000  323.21     9.4         142.51  miniweather_compute_tendencies_x
+         COM    648,000  2,268,000   14.20     0.4           6.26  miniweather_set_halo_values_x
+         USR    648,000  2,268,000    0.84     0.0           0.37  miniweather_set_halo_values_z
+         USR    648,000  2,268,000  266.16     7.7         117.35  miniweather_compute_tendencies_z
+         USR    416,088  1,419,588    0.78     0.0           0.55  miniweather_injection
+         USR    416,088  1,419,588    0.55     0.0           0.39  miniweather_hydro_const_theta
+         COM    216,000    756,000    2.10     0.1           2.78  miniweather_perform_timestep
+         MPI     58,800     50,400   73.74     2.1        1463.14  MPI_File_write_at_all
+         USR     50,496    164,286    0.08     0.0           0.52  miniweather_ncwrap
+         MPI     49,500     63,000 1143.35    33.2       18148.40  MPI_Allreduce
+         MPI     44,198        451    0.84     0.0        1855.30  MPI_File_write_at
+         MPI     36,096    126,336    0.09     0.0           0.68  MPI_Comm_rank
+         MPI     20,100     25,200  672.95    19.5       26704.28  MPI_File_open
+         MPI     19,800     25,200    6.30     0.2         250.14  MPI_Bcast
+         MPI     18,000     50,550    5.88     0.2         116.22  MPI_File_set_view
+         MPI     14,602        149    0.01     0.0          71.35  MPI_File_read_at
+         MPI     12,300     25,200   41.01     1.2        1627.44  MPI_File_close
+         MPI      3,600     12,600  595.44    17.3       47257.45  MPI_Comm_dup
+         MPI      3,600     12,600    0.11     0.0           8.92  MPI_File_get_info
+         COM      3,600     12,600    3.03     0.1         240.82  miniweather_output
+         MPI      3,600     12,600   11.99     0.3         951.23  MPI_Comm_free
+         MPI         66         84    0.03     0.0         305.64  MPI_Barrier
+         MPI         48        168    0.00     0.0           3.19  MPI_Comm_size
+      SCOREP         41         84    0.02     0.0         209.31  miniWeather_mpi
+         MPI         24         84    0.02     0.0         228.80  MPI_Finalize
+         MPI         24         84  144.13     4.2     1715785.27  MPI_Init
+         COM         24         84    0.42     0.0        5018.18  MAIN_
+         COM         24         84    0.48     0.0        5707.68  miniweather_init
+         COM         24         84    0.00     0.0          10.89  miniweather_finalize

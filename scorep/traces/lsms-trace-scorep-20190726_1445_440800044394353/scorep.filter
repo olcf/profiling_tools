@@ -1,0 +1,9 @@
+SCOREP_REGION_NAMES_BEGIN
+  EXCLUDE *
+  INCLUDE main
+          calculateTau*
+          buildKKRMatrix*
+          *cuda*
+          *$omp*
+          MPI_*
+SCOREP_REGION_NAMES_END

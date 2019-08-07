@@ -1,0 +1,87 @@
+
+Estimated aggregate size of event trace:                   2749MB
+Estimated requirements for largest trace buffer (max_buf): 741MB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       781MB
+(hint: When tracing set SCOREP_TOTAL_MEMORY=781MB to avoid intermediate flushes
+ or reduce requirements using USR regions filters.)
+
+flt     type  max_buf[B]     visits time[s] time[%] time/visit[us]  region
+         ALL 776,812,903 62,871,344  771.79   100.0          12.28  ALL
+         OMP 751,025,340 59,976,720  650.65    84.3          10.85  OMP
+         MPI  11,311,476    667,986  111.19    14.4         166.46  MPI
+         USR  10,026,068  1,542,022    0.70     0.1           0.45  USR
+         COM   4,449,978    684,612    9.22     1.2          13.47  COM
+      SCOREP          41          4    0.03     0.0        6442.24  SCOREP
+
+         OMP  93,960,000  4,320,000    3.13     0.4           0.73  !$omp parallel @miniWeather_mpi_openmp.F90:215
+         OMP  46,980,000    540,000    0.39     0.1           0.73  !$omp parallel @miniWeather_mpi_openmp.F90:384
+         OMP  46,980,000  2,160,000    1.60     0.2           0.74  !$omp parallel @miniWeather_mpi_openmp.F90:325
+         OMP  46,980,000  2,160,000    1.74     0.2           0.80  !$omp parallel @miniWeather_mpi_openmp.F90:351
+         OMP  46,980,000  2,160,000    1.60     0.2           0.74  !$omp parallel @miniWeather_mpi_openmp.F90:369
+         OMP  46,980,000  2,160,000    1.63     0.2           0.76  !$omp parallel @miniWeather_mpi_openmp.F90:295
+         OMP  46,980,000  2,160,000    1.55     0.2           0.72  !$omp parallel @miniWeather_mpi_openmp.F90:405
+         OMP  46,980,000  2,160,000    1.56     0.2           0.72  !$omp parallel @miniWeather_mpi_openmp.F90:270
+         OMP  46,980,000  2,160,000    1.68     0.2           0.78  !$omp parallel @miniWeather_mpi_openmp.F90:240
+         OMP  28,080,000  4,320,000   12.43     1.6           2.88  !$omp implicit barrier @miniWeather_mpi_openmp.F90:222
+         OMP  28,080,000  4,320,000   17.15     2.2           3.97  !$omp do @miniWeather_mpi_openmp.F90:215
+         OMP  14,040,000  2,160,000    7.20     0.9           3.33  !$omp implicit barrier @miniWeather_mpi_openmp.F90:268
+         OMP  14,040,000  2,160,000   18.91     2.4           8.75  !$omp do @miniWeather_mpi_openmp.F90:270
+         OMP  14,040,000  2,160,000    2.30     0.3           1.06  !$omp do @miniWeather_mpi_openmp.F90:351
+         OMP  14,040,000  2,160,000   20.58     2.7           9.53  !$omp do @miniWeather_mpi_openmp.F90:325
+         OMP  14,040,000  2,160,000    9.46     1.2           4.38  !$omp implicit barrier @miniWeather_mpi_openmp.F90:335
+         OMP  14,040,000  2,160,000   29.42     3.8          13.62  !$omp implicit barrier @miniWeather_mpi_openmp.F90:323
+         OMP  14,040,000  2,160,000    2.30     0.3           1.06  !$omp do @miniWeather_mpi_openmp.F90:369
+         OMP  14,040,000  2,160,000    6.64     0.9           3.07  !$omp implicit barrier @miniWeather_mpi_openmp.F90:378
+         OMP  14,040,000  2,160,000    6.08     0.8           2.82  !$omp implicit barrier @miniWeather_mpi_openmp.F90:360
+         OMP  14,040,000  2,160,000  249.71    32.4         115.61  !$omp do @miniWeather_mpi_openmp.F90:295
+         OMP  14,040,000    540,000    1.60     0.2           2.96  !$omp implicit barrier @miniWeather_mpi_openmp.F90:391
+         OMP  14,040,000  2,160,000  236.57    30.7         109.52  !$omp do @miniWeather_mpi_openmp.F90:240
+         OMP  14,040,000    540,000    0.42     0.1           0.78  !$omp do @miniWeather_mpi_openmp.F90:384
+         OMP  14,040,000  2,160,000    5.85     0.8           2.71  !$omp implicit barrier @miniWeather_mpi_openmp.F90:432
+         OMP  14,040,000  2,160,000    1.92     0.2           0.89  !$omp do @miniWeather_mpi_openmp.F90:405
+         OMP  14,040,000  2,160,000    6.79     0.9           3.14  !$omp implicit barrier @miniWeather_mpi_openmp.F90:277
+         USR   4,985,682    767,028    0.40     0.1           0.52  INJECTION
+         USR   4,985,682    767,028    0.30     0.0           0.39  HYDRO_CONST_THETA
+         MPI   4,806,000    216,000    0.70     0.1           3.22  MPI_Isend
+         MPI   4,806,000    216,000    0.44     0.1           2.05  MPI_Irecv
+         COM   1,404,000    216,000    1.89     0.2           8.76  SEMI_DISCRETE_STEP
+         MPI   1,404,000    216,000    3.80     0.5          17.58  MPI_Waitall
+         COM     702,000    108,000    0.81     0.1           7.47  SET_HALO_VALUES_Z
+         COM     702,000    108,000    1.68     0.2          15.57  COMPUTE_TENDENCIES_X
+         COM     702,000    108,000    1.59     0.2          14.71  COMPUTE_TENDENCIES_Z
+         COM     702,000    108,000    2.39     0.3          22.10  SET_HALO_VALUES_X
+         OMP     261,000     12,000    0.01     0.0           0.83  !$omp parallel @miniWeather_mpi_openmp.F90:785
+         COM     234,000     36,000    0.13     0.0           3.51  PERFORM_TIMESTEP
+         OMP      78,000     12,000    0.08     0.0           7.02  !$omp do @miniWeather_mpi_openmp.F90:785
+         OMP      78,000     12,000    0.04     0.0           3.43  !$omp implicit barrier @miniWeather_mpi_openmp.F90:794
+         MPI      60,000      2,400   11.90     1.5        4958.16  MPI_File_write_at_all
+         USR      54,704      7,966    0.00     0.0           0.58  NCWRAP
+         MPI      51,000      3,000   34.19     4.4       11395.27  MPI_Allreduce
+         MPI      45,100        451    0.34     0.0         761.85  MPI_File_write_at
+         MPI      39,104      6,016    0.00     0.0           0.70  MPI_Comm_rank
+         MPI      20,700      1,200   30.04     3.9       25030.53  MPI_File_open
+         MPI      20,400      1,200    0.24     0.0         198.72  MPI_Bcast
+         MPI      19,500      2,550    0.21     0.0          83.22  MPI_File_set_view
+         MPI      14,900        149    0.01     0.0          46.77  MPI_File_read_at
+         MPI      12,900      1,200    0.90     0.1         751.47  MPI_File_close
+         MPI       3,900        600    0.13     0.0         211.91  MPI_Comm_free
+         MPI       3,900        600   27.04     3.5       45061.92  MPI_Comm_dup
+         MPI       3,900        600    0.01     0.0           8.62  MPI_File_get_info
+         COM       3,900        600    0.64     0.1        1068.97  OUTPUT
+         OMP       1,740         80    0.00     0.0           1.21  !$omp parallel @miniWeather_mpi_openmp.F90:542
+         OMP       1,740         80    0.00     0.0           5.10  !$omp parallel @miniWeather_mpi_openmp.F90:508
+         OMP       1,740         80    0.00     0.0           1.17  !$omp parallel @miniWeather_mpi_openmp.F90:558
+         OMP         520         80    0.00     0.0           4.65  !$omp do @miniWeather_mpi_openmp.F90:558
+         OMP         520         80    0.00     0.0           3.49  !$omp implicit barrier @miniWeather_mpi_openmp.F90:570
+         OMP         520         80    0.00     0.0           5.56  !$omp implicit barrier @miniWeather_mpi_openmp.F90:556
+         OMP         520         80    0.08     0.0        1015.10  !$omp implicit barrier @miniWeather_mpi_openmp.F90:538
+         OMP         520         80    0.00     0.0          10.91  !$omp do @miniWeather_mpi_openmp.F90:542
+         OMP         520         80    0.23     0.0        2865.75  !$omp do @miniWeather_mpi_openmp.F90:508
+         MPI          68          4    0.00     0.0         171.51  MPI_Barrier
+         MPI          52          8    0.00     0.0           5.42  MPI_Comm_size
+      SCOREP          41          4    0.03     0.0        6442.24  miniWeather_mpi_openmp
+         MPI          26          4    1.26     0.2      314428.04  MPI_Init
+         COM          26          4    0.00     0.0          14.18  FINALIZE
+         COM          26          4    0.01     0.0        3290.49  INIT
+         COM          26          4    0.09     0.0       21721.20  MINIWEATHER
+         MPI          26          4    0.00     0.0          81.74  MPI_Finalize

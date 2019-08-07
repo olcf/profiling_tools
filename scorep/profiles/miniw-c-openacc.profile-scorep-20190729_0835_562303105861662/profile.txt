@@ -1,0 +1,101 @@
+
+Estimated aggregate size of event trace:                   607MB
+Estimated requirements for largest trace buffer (max_buf): 54MB
+Estimated memory requirements (SCOREP_TOTAL_MEMORY):       56MB
+(hint: When tracing set SCOREP_TOTAL_MEMORY=56MB to avoid intermediate flushes
+ or reduce requirements using USR regions filters.)
+
+flt     type max_buf[B]     visits time[s] time[%] time/visit[us]  region
+         ALL 56,251,529 21,259,014  443.14   100.0          20.84  ALL
+     OPENACC 40,727,960 17,312,520   79.20    17.9           4.57  OPENACC
+         MPI 11,311,476  2,002,458  333.18    75.2         166.38  MPI
+         COM  4,212,052  1,944,024   30.76     6.9          15.82  COM
+      SCOREP         41         12    0.00     0.0          87.02  SCOREP
+
+         MPI  4,806,000    648,000    1.27     0.3           1.96  MPI_Irecv
+         MPI  4,806,000    648,000    1.75     0.4           2.71  MPI_Isend
+         MPI  1,404,000    648,000   12.08     2.7          18.64  MPI_Waitall
+         COM  1,404,000    648,000    1.84     0.4           2.84  semi_discrete_step(double*, double*, double*, double, int, double*, double*)
+     OPENACC  1,404,000    648,000    3.34     0.8           5.15  acc_download@miniWeather_mpi_openacc.cpp:370
+     OPENACC  1,404,000    648,000    4.02     0.9           6.20  acc_upload@miniWeather_mpi_openacc.cpp:380
+     OPENACC  1,404,000    648,000    5.15     1.2           7.95  acc_wait@miniWeather_mpi_openacc.cpp:380
+     OPENACC  1,404,000    648,000    1.31     0.3           2.02  acc_data_enter@miniWeather_mpi_openacc.cpp:220
+     OPENACC  1,404,000    648,000    1.41     0.3           2.17  acc_compute@miniWeather_mpi_openacc.cpp:220
+     OPENACC  1,404,000    648,000    3.74     0.8           5.77  acc_launch_kernel@miniWeather_mpi_openacc.cpp:220
+     OPENACC  1,404,000    648,000    5.46     1.2           8.42  acc_wait@miniWeather_mpi_openacc.cpp:220
+     OPENACC  1,404,000    648,000    1.44     0.3           2.23  acc_data_exit@miniWeather_mpi_openacc.cpp:220
+     OPENACC    702,000    324,000    2.03     0.5           6.26  acc_launch_kernel@miniWeather_mpi_openacc.cpp:243
+     OPENACC    702,000    324,000    0.69     0.2           2.14  acc_compute@miniWeather_mpi_openacc.cpp:329
+     OPENACC    702,000    324,000    0.60     0.1           1.86  acc_data_enter@miniWeather_mpi_openacc.cpp:329
+     OPENACC    702,000    324,000    0.97     0.2           3.01  acc_data_exit@miniWeather_mpi_openacc.cpp:298
+     OPENACC    702,000    324,000    4.12     0.9          12.71  acc_wait@miniWeather_mpi_openacc.cpp:298
+     OPENACC    702,000    324,000    1.86     0.4           5.74  acc_launch_kernel@miniWeather_mpi_openacc.cpp:298
+     OPENACC    702,000    324,000    0.70     0.2           2.18  acc_compute@miniWeather_mpi_openacc.cpp:298
+     OPENACC    702,000    324,000    0.89     0.2           2.76  acc_data_enter@miniWeather_mpi_openacc.cpp:298
+         COM    702,000    324,000    1.31     0.3           4.03  compute_tendencies_z(double*, double*, double*)
+     OPENACC    702,000    324,000    0.36     0.1           1.12  acc_data_exit@miniWeather_mpi_openacc.cpp:419
+     OPENACC    702,000    324,000    2.56     0.6           7.90  acc_wait@miniWeather_mpi_openacc.cpp:419
+     OPENACC    702,000    324,000    1.83     0.4           5.66  acc_launch_kernel@miniWeather_mpi_openacc.cpp:419
+     OPENACC    702,000    324,000    0.69     0.2           2.13  acc_compute@miniWeather_mpi_openacc.cpp:419
+     OPENACC    702,000    324,000    0.34     0.1           1.06  acc_data_enter@miniWeather_mpi_openacc.cpp:419
+         COM    702,000    324,000    0.68     0.2           2.11  set_halo_values_z(double*)
+     OPENACC    702,000    324,000    0.74     0.2           2.27  acc_data_enter@miniWeather_mpi_openacc.cpp:380
+     OPENACC    702,000    324,000    1.81     0.4           5.60  acc_launch_kernel@miniWeather_mpi_openacc.cpp:329
+         COM    702,000    324,000    2.86     0.6           8.82  set_halo_values_x(double*)
+     OPENACC    702,000    324,000    2.85     0.6           8.81  acc_wait@miniWeather_mpi_openacc.cpp:329
+     OPENACC    702,000    324,000    0.68     0.2           2.11  acc_data_enter@miniWeather_mpi_openacc.cpp:358
+     OPENACC    702,000    324,000    0.67     0.2           2.07  acc_data_exit@miniWeather_mpi_openacc.cpp:329
+     OPENACC    702,000    324,000    0.75     0.2           2.32  acc_compute@miniWeather_mpi_openacc.cpp:358
+     OPENACC    702,000     27,000    0.16     0.0           5.98  acc_launch_kernel@miniWeather_mpi_openacc.cpp:395
+     OPENACC    702,000    324,000    0.52     0.1           1.61  acc_data_exit@miniWeather_mpi_openacc.cpp:274
+     OPENACC    702,000    324,000    2.60     0.6           8.04  acc_wait@miniWeather_mpi_openacc.cpp:274
+     OPENACC    702,000     27,000    0.06     0.0           2.25  acc_compute@miniWeather_mpi_openacc.cpp:395
+     OPENACC    702,000    324,000    1.86     0.4           5.74  acc_launch_kernel@miniWeather_mpi_openacc.cpp:274
+     OPENACC    702,000    324,000    0.71     0.2           2.18  acc_compute@miniWeather_mpi_openacc.cpp:274
+     OPENACC    702,000    324,000    0.49     0.1           1.52  acc_data_enter@miniWeather_mpi_openacc.cpp:274
+     OPENACC    702,000    324,000    0.86     0.2           2.64  acc_data_exit@miniWeather_mpi_openacc.cpp:243
+     OPENACC    702,000    324,000    3.67     0.8          11.32  acc_wait@miniWeather_mpi_openacc.cpp:243
+     OPENACC    702,000    324,000    2.07     0.5           6.38  acc_launch_kernel@miniWeather_mpi_openacc.cpp:380
+     OPENACC    702,000    324,000    0.73     0.2           2.27  acc_compute@miniWeather_mpi_openacc.cpp:243
+     OPENACC    702,000    324,000    0.78     0.2           2.40  acc_data_enter@miniWeather_mpi_openacc.cpp:243
+         COM    702,000    324,000    1.43     0.3           4.43  compute_tendencies_x(double*, double*, double*)
+     OPENACC    702,000     27,000    0.06     0.0           2.18  acc_data_exit@miniWeather_mpi_openacc.cpp:395
+     OPENACC    702,000     27,000    0.22     0.0           8.09  acc_wait@miniWeather_mpi_openacc.cpp:395
+     OPENACC    702,000    324,000    1.96     0.4           6.05  acc_update@miniWeather_mpi_openacc.cpp:370
+     OPENACC    702,000    324,000    2.65     0.6           8.17  acc_wait@miniWeather_mpi_openacc.cpp:358
+     OPENACC    702,000    324,000    0.74     0.2           2.27  acc_data_exit@miniWeather_mpi_openacc.cpp:358
+     OPENACC    702,000     27,000    0.05     0.0           1.98  acc_data_enter@miniWeather_mpi_openacc.cpp:395
+     OPENACC    702,000    324,000    0.73     0.2           2.26  acc_data_exit@miniWeather_mpi_openacc.cpp:380
+     OPENACC    702,000    324,000    2.30     0.5           7.09  acc_wait@miniWeather_mpi_openacc.cpp:370
+     OPENACC    702,000    324,000    1.95     0.4           6.02  acc_launch_kernel@miniWeather_mpi_openacc.cpp:358
+     OPENACC    702,000    324,000    0.74     0.2           2.28  acc_compute@miniWeather_mpi_openacc.cpp:380
+     OPENACC    702,000    324,000    2.17     0.5           6.71  acc_update@miniWeather_mpi_openacc.cpp:380
+         MPI     60,000      7,200   12.83     2.9        1781.95  MPI_File_write_at_all
+         MPI     51,000      9,000  122.72    27.7       13635.07  MPI_Allreduce
+         MPI     45,100        451    0.37     0.1         828.00  MPI_File_write_at
+         MPI     39,104     18,048    0.01     0.0           0.61  MPI_Comm_rank
+         MPI     20,700      3,600   88.93    20.1       24703.26  MPI_File_open
+         MPI     20,400      3,600    0.42     0.1         117.72  MPI_Bcast
+         MPI     19,500      7,350    0.61     0.1          83.26  MPI_File_set_view
+         MPI     14,900        149    0.01     0.0          48.16  MPI_File_read_at
+         MPI     12,900      3,600    1.94     0.4         540.25  MPI_File_close
+         MPI      3,900      1,800    0.01     0.0           8.24  MPI_File_get_info
+         MPI      3,900      1,800    0.46     0.1         254.37  MPI_Comm_free
+         MPI      3,900      1,800   81.15    18.3       45084.03  MPI_Comm_dup
+     OPENACC      3,874      1,788    0.01     0.0           3.92  acc_update@miniWeather_mpi_openacc.cpp:161
+     OPENACC      3,874      1,788    0.02     0.0          11.93  acc_wait@miniWeather_mpi_openacc.cpp:161
+     OPENACC      3,874      1,788    0.01     0.0           5.34  acc_download@miniWeather_mpi_openacc.cpp:161
+     OPENACC        182         84    0.00     0.0           9.75  acc_upload@miniWeather_mpi_openacc.cpp:139
+         MPI         68         12    1.41     0.3      117396.60  MPI_Barrier
+         MPI         52         24    0.00     0.0           5.33  MPI_Comm_size
+      SCOREP         41         12    0.00     0.0          87.02  miniWeather_mpi_openacc
+     OPENACC         26         12    0.04     0.0        3351.30  acc_init
+         COM         26         12    1.08     0.2       90159.13  main
+         COM         26         12   21.55     4.9     1795789.16  init(int*, char***)
+     OPENACC         26         12    0.00     0.0           6.80  acc_download@miniWeather_mpi_openacc.cpp:164
+     OPENACC         26         12    0.00     0.0           7.70  acc_wait@miniWeather_mpi_openacc.cpp:164
+         MPI         26         12    7.19     1.6      599143.98  MPI_Init
+         MPI         26         12    0.00     0.0         100.82  MPI_Finalize
+     OPENACC         26         12    0.00     0.0         160.56  acc_data_exit@miniWeather_mpi_openacc.cpp:139
+     OPENACC         26         12    0.01     0.0         573.49  acc_data_enter@miniWeather_mpi_openacc.cpp:139
+     OPENACC         26         12    0.00     0.0          11.27  acc_wait@miniWeather_mpi_openacc.cpp:139
