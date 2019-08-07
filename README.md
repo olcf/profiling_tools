@@ -102,7 +102,7 @@ c
 
 * To create a dynamic phase use the file select2.tau in TAU_OPTIONS
 
-#SCALASCA
+# SCALASCA
 
 
 cd $PROF\_ROOT/tau/
