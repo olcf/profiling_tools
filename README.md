@@ -105,7 +105,7 @@ c
 # SCALASCA
 
 
-cd $PROF\_ROOT/tau/
+cd $PROF\_ROOT/scalasca/
 
 cp -r ../../miniweather .
 
@@ -142,3 +142,38 @@ cd miniweather/c
 * Visualize
 
 	scalasca -examine /path/to/folder/
+
+# Extrae 
+
+cd $PROF\_ROOT/extrae/
+
+cp -r ../../miniweather .
+
+cd miniweather/c
+
+* Load Extrae
+	
+	module load extrae/3.7.1
+
+* Execute
+
+	MPI:
+		bsub weather_mpi.sh
+		bsub merge_mpi.sh
+
+	MPI+OpenMP:
+		bsub weather_mpi_openmp.sh
+		bsug merge_openmp.sh
+
+
+* Connect to Rhea with GUI support
+
+	ssh -Y username@rhea.ccs.ornl.gov
+	module load paraver
+	wxparaview
+	Load the trace
+
+* Load configuration files
+
+	Location: /sw/rhea/paraver/cfgs/
+
