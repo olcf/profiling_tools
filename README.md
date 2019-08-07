@@ -13,6 +13,7 @@ cp common/Makefile_cxx miniWeather/c/Makefile
 
 module load pgi/19.4  
 module load parallel-netcdf   
+export PROF_ROOT=$PWD/profiling_tools
 cd miniWeather/c/   
 make  
 
@@ -42,3 +43,17 @@ make openacc
 	bsub weather_mpi_openacc.sh
 
 # TAU
+
+cd $PROF_ROOT
+
+cp -r ../../miniweather .
+
+cd miniweather/c
+
+* Edit Makefile and replace mpicxx with tau_cxx.sh
+
+* Load TAU
+
+module load tau/2.28.1_patched
+
+* Compile
