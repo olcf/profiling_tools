@@ -13,7 +13,7 @@ cp common/Makefile_cxx miniWeather/c/Makefile
 
 module load pgi/19.4  
 module load parallel-netcdf   
-export PROF_ROOT=$PWD/profiling_tools
+export PROF_ROOT=$PWD/profiling_tools  
 cd miniWeather/c/   
 make  
 
@@ -86,6 +86,7 @@ cd miniweather/c
 * Visualize
 
 	* Connect to the systen with X11 support.
+		ssh -Y ...
 	* If there are many folders with pattern MULTI\__*, execute
 		paraprof
 
@@ -105,7 +106,7 @@ c
 # SCALASCA
 
 
-cd $PROF\_ROOT/tau/
+cd $PROF\_ROOT/scalasca/
 
 cp -r ../../miniweather .
 
@@ -140,5 +141,42 @@ cd miniweather/c
         bsub weather_mpi_openmp.sh
 
 * Visualize
+	Connect to the system with X11 support
+	ssh -Y ...
 
 	scalasca -examine /path/to/folder/
+
+# Extrae 
+
+cd $PROF\_ROOT/extrae/
+
+cp -r ../../miniweather .
+
+cd miniweather/c
+
+* Load Extrae
+	
+	module load extrae/3.7.1
+
+* Execute
+
+	MPI:
+		bsub weather_mpi.sh
+		bsub merge_mpi.sh
+
+	MPI+OpenMP:
+		bsub weather_mpi_openmp.sh
+		bsug merge_openmp.sh
+
+
+* Connect to Rhea with GUI support
+
+	ssh -Y username@rhea.ccs.ornl.gov
+	module load paraver
+	wxparaview
+	Load the trace
+
+* Load configuration files
+
+	Location: /sw/rhea/paraver/cfgs/
+
