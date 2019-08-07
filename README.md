@@ -86,6 +86,7 @@ cd miniweather/c
 * Visualize
 
 	* Connect to the systen with X11 support.
+		ssh -Y ...
 	* If there are many folders with pattern MULTI\__*, execute
 		paraprof
 
@@ -140,6 +141,8 @@ cd miniweather/c
         bsub weather_mpi_openmp.sh
 
 * Visualize
+	Connect to the system with X11 support
+	ssh -Y ...
 
 	scalasca -examine /path/to/folder/
 
