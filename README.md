@@ -92,7 +92,7 @@ cd miniweather/c
 	* If there are many files and not a folder, plack them and execute parprof  
 		paraprof --pack name.ppk  
 		paraprof name.ppk  
-
+c
 
 * Which loops require the most time?
 
@@ -101,3 +101,44 @@ cd miniweather/c
 	* Compile and Execute
 
 * To create a dynamic phase use the file select2.tau in TAU_OPTIONS
+
+#SCALASCA
+
+
+cd $PROF\_ROOT/tau/
+
+cp -r ../../miniweather .
+
+cd miniweather/c  
+
+
+* Load Scalasca
+
+        module load scorep/6.0_r14595  
+        module load scalasca  
+
+ * Edit Makefile
+	
+	Change the  
+
+	CC := mpipgic++  
+	to  
+	CC := ${PREP} mpipgic++
+
+
+
+* Compile and run
+
+        MPI:
+        make PREP ="scorep --mpp=mpi --pdt" mpi
+        Edit the script weather_mpi.sh to activate the Scalasca/Score-P variables that you require
+        bsub weather_mpi.sh
+
+        MPI+OpenMP:
+        make PREP ="scorep --mpp=mpi --openmp --pdt" openmp
+        Edit the script weather_mpi.sh to activate the Scalasca/Score-P variables that you require
+        bsub weather_mpi_openmp.sh
+
+* Visualize
+
+	scalasca -examine /path/to/folder/
