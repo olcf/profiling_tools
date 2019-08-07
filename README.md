@@ -63,14 +63,15 @@ export TAU_OPTIONS='-optLinking=-lpnetcdf -optVerbose'
 
 	MPI:  
         Edit Makefile and replace mpicxx with tau_cxx.sh  
+	Declare TAU_MAKEFILE  
 	export TAU_MAKEFILE=/sw/summit/tau/2.28.1_patched/ibm64linux/lib/Makefile.tau-pgi-papi-mpi-pdt-pgi  
-        make mpi 
+        make mpi  
         Edit the script weather_mpi.sh to activate the TAU variables that you require  
-        bsub weather_mpi.sh   
+        bsub weather_mpi.sh  
 
         MPI+OpenMP:  
         Edit Makefile and replace mpicxx with tau_cxx.sh  
-        export TAU_MAKEFILE=/sw/summit/tau/2.28.1_patched/ibm64linux/lib/Makefile.tau-pgi-papi-mpi-pdt-openmp-opari-pgi
+        export TAU_MAKEFILE=/sw/summit/tau/2.28.1_patched/ibm64linux/lib/Makefile.tau-pgi-papi-mpi-pdt-openmp-opari-pgi  
         make openmp  
         Edit the script weather_mpi.sh to activate the TAU variables that you require  
         bsub weather_mpi_openmp.sh  
