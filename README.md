@@ -44,7 +44,7 @@ make openacc
 
 # TAU
 
-cd $PROF_ROOT
+cd $PROF\_ROOT
 
 cp -r ../../miniweather .
 
@@ -57,7 +57,7 @@ cd miniweather/c
 
 * Declare the correct linking
 
-export TAU_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
+export TAU\_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
 
 * Compile and run
 
@@ -71,6 +71,7 @@ export TAU_OPTIONS=\'-optLinking=-lpnetcdf -optVerbose\'
 
         MPI+OpenMP:  
         Edit Makefile and replace mpicxx with tau_cxx.sh  
+        Declare TAU_MAKEFILE  
         export TAU_MAKEFILE=/sw/summit/tau/2.28.1_patched/ibm64linux/lib/Makefile.tau-pgi-papi-mpi-pdt-openmp-opari-pgi  
         make openmp  
         Edit the script weather_mpi.sh to activate the TAU variables that you require  
