@@ -11,18 +11,18 @@ cp common/Makefile_cxx miniWeather/c/Makefile
 
 * Load the appropriate modules and compile all the versions or the one tou want
 
-module load pgi/19.4
-module load parallel-netcdf
-cd miniWeather/c/
-make
-or 
+module load pgi/19.4 \\
+module load parallel-netcdf \\
+cd miniWeather/c/ \\
+make \\
+or  \\
 
-MPI:
-make mpi 
+MPI:\\ 
+make mpi\\ 
 
-OpenMP:
-make openmp
+OpenMP: \\
+make openmp \\
 
-OpenACC
-make openacc
+OpenACC  \\
+make openacc  \\
 
